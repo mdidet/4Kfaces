@@ -32,11 +32,12 @@ header {
 }
 
 .logo img {
-    width: 60px;
+    width: 50px;
     margin-right: 10px;
 }
 .btn-download img {
     width: 20px;
+    text-decoration: none;
 }    
 .btn-download {
     display: flex;
@@ -45,6 +46,7 @@ header {
     gap: 8px; /* Space between icon and text */
     background-color: #000000;
     color: white;
+    text-decoration: none;
     padding: 12px 18px;
     border-radius: 30px;
     border: none;
@@ -85,8 +87,9 @@ h2 {
     border: none;
     background: #ffffff;
     border-radius: 30px;
-    font-size: 14px;
+    font-size: 16px;
     cursor: pointer;
+    font-weight: 400;
     transition: all 0.3s ease;
 }
 
