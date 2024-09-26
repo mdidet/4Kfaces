@@ -82,8 +82,6 @@ header {
     margin: 30px 0;
 }
 
-
-
 .color-picker {
     display: flex;
     justify-content: center;
@@ -108,8 +106,6 @@ header {
     color: white; /* Color of the tick */
     font-size: 20px; /* Size of the tick */
 }
-
-
 
 .circle:hover {
     transform: scale(1.1); /* Scale effect on hover */
@@ -194,49 +190,109 @@ footer {
     color: #666;
 }
 
-/* Media Queries for Responsiveness */
-@media (max-width: 1200px) {
-    .avatar-grid {
-        grid-template-columns: repeat(4, 1fr); /* 4 avatars per row on medium screens */
-    }
+
+h5 {
+font-family: poppins;
+font-size: 20px;
 }
 
-@media (max-width: 900px) {
-    .avatar-grid {
-        grid-template-columns: repeat(3, 1fr); /* 3 avatars per row on smaller screens */
-    }
 
-    h2 {
-        font-size: 1.8rem;
-    }
+
+
+/* Apply Color Button */
+#hex-color {
+    background-color: #f4f4f4; /* Change this to your desired color */
+    color: rgb(0, 0, 0);
+    border: 1px solid #ccc;
+    border-radius: 50px; /* This defines the radius of the corners */
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-@media (max-width: 600px) {
-    .avatar-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 avatars per row on small screens */
-    }
-
-    .avatar img {
-        width: 150px; /* Slightly smaller images on mobile */
-        height: 150px;
-    }
+#apply-color {
+    background-color: #AD49E1; /* Change this to your desired color */
+    color: white;
+    border: 1px solid #ccc;
+    border-radius: 50px; /* This defines the radius of the corners */
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-@media (max-width: 400px) {
-    .avatar-grid {
-        grid-template-columns: repeat(1, 1fr); /* 1 avatar per row on very small screens */
-    }
 
-    .avatar img {
-        width: 130px; /* Even smaller on tiny screens */
-        height: 130px;
-    }
-
-    h2 {
-        font-size: 1.6rem;
-    }
-
-    .gender-toggle button {
-        padding: 8px 20px; /* Smaller buttons */
-    }
+/* Hex Color Input */
+#hexColorInput {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px; /* Change this to adjust the roundness of the input corners */
+    margin-bottom: 10px;
 }
+
+
+
+/* Floating Button */
+.floating-btn {
+    position: sticky;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    bottom: 50px;
+    left: 90%;
+    background-color: #A45EE5;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+.floating-btn:hover {
+    background-color: #ffffff; /* Darker shade on hover */
+    color: #AD49E1;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 60px;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    margin: 10% auto;
+    padding: 30px;
+    border: 1px solid #dedede;
+    width: 300px; /* Set width of the modal */
+    border-radius: 20px; /* Rounded corners */
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+   
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
