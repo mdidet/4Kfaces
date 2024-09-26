@@ -242,9 +242,9 @@ font-size: 20px;
     color: white;
     border: none;
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    font-size: 20px;
+    width: 70px;
+    height: 70px;
+    font-size: 22px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -258,6 +258,8 @@ font-size: 20px;
     color: #AD49E1;
 }
 
+
+
 /* Modal Styles */
 .modal {
     display: none; /* Hidden by default */
@@ -269,30 +271,123 @@ font-size: 20px;
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.7);
-    padding: 60px;
+    padding: 0;
+    transition: opacity 0.3s ease; /* Smooth fade-in/out */
 }
 
+/* Modal Content */
 .modal-content {
     background-color: #ffffff;
-    margin: 10% auto;
-    padding: 30px;
-    border: 1px solid #dedede;
-    width: 300px; /* Set width of the modal */
-    border-radius: 20px; /* Rounded corners */
+    margin: auto;
+    padding: 20px; /* Keep a little padding around the content */
+    border-radius: 30px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    width: 300px; /* Fixed width */
+    height: 250px; /* Fixed height to maintain square shape */
+    display: flex; /* Flexbox for centering */
+    flex-direction: column; /* Vertical layout */
+    align-items: center; /* Centering items horizontally */
+    justify-content: center; /* Centering items vertically */
+    position: absolute; /* Absolute positioning for centering */
+    top: 50%; /* Move to the middle of the screen */
+    left: 50%; /* Move to the middle of the screen */
+    transform: translate(-50%, -50%); /* Translate back by half of its width and height */
 }
 
-.close-btn {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
+/* Title */
+h5 {
+    font-size: 24px;
     font-weight: bold;
-   
+    margin-bottom: 20px; /* Space below title */
+    text-align: center; /* Center the title text */
 }
+
+/* Color Input */
+#hex-color {
+    width: 90%; /* Input width */
+    height: 30px;
+    padding: 10px;
+    padding-left: 20px;
+    border: 1px solid #ccc;
+    border-radius: 100px; /* Rounded input */
+    font-size: 16px;
+    margin-bottom: 12px; /* Space below input for the button */
+    outline: none;
+    transition: border-color 0.3s; /* Smooth transition */
+}
+
+#hex-color:focus {
+    border-color: #A45EE5; /* Change border color on focus */
+    color: #000000;
+}
+
+/* Apply Button */
+#apply-color {
+    background-color: #A45EE5; /* Button color */
+    color: #ffffff; /* Text color */
+    padding: 10px; /* Match padding with the input */
+    width: 60%; /* Same width as input */
+    height: 50px; /* Set height to match the input */
+    border: none;
+    border-radius: 100px; /* Rounded button */
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+#apply-color:hover {
+    background-color: #ffffff; /* Darker color on hover */
+    color: #A45EE5;
+    border: solid 1px;
+}
+
+/* Close Button */
+.close-btn {
+    color: #7f7f7f; /* Button color */
+    font-size: 30px; /* Font size */
+    font-weight: normal; /* Bold text */
+    position: absolute; /* Positioned in the corner */
+    right: 20px; /* Right alignment */
+    top: 20px; /* Top alignment */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: color 0.3s, transform 0.3s; /* Smooth transition */
+    border: none; /* No border */
+    background: none; /* No background */
+}
+
+/* Modern hover effect */
+.close-btn:hover {
+    color: #0056b3; /* Darker color on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Close button focus effect */
+.close-btn:focus {
+    outline: none; /* Remove default outline */
+}
+
 
 .close-btn:hover,
 .close-btn:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+    color: #333; /* Darker color on hover */
 }
 
+/* Responsive Design */
+@media (max-width: 480px) {
+    .modal-content {
+        width: 90%; /* Full width on smaller screens */
+        height: auto; /* Auto height for smaller screens */
+    }
+    
+    h5 {
+        font-size: 20px; /* Smaller title on mobile */
+    }
+
+    #hex-color {
+        font-size: 14px; /* Smaller input text */
+    }
+
+    #apply-color {
+        font-size: 14px; /* Smaller button text */
+    }
+}
