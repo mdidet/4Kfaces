@@ -1,6 +1,12 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const avatarGrid = document.getElementById('avatar-grid');
     const colorCircles = document.querySelectorAll('.circle');
+    const colorPickerModal = document.getElementById('color-picker-modal');
+    const colorPickerBtn = document.getElementById('color-picker-btn');
+    const closeModalBtn = document.querySelector('.close-btn');
+    const hexColorInput = document.getElementById('hex-color');
+    const applyColorBtn = document.getElementById('apply-color');
+
     let selectedColor = 'rgba(255, 255, 255, 0)'; // Default to transparent
     let currentCircle = null; // Track the currently selected circle
 
@@ -14,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const img = new Image();
             img.src = imgSrc;
 
-            img.onload = function() {
+            img.onload = function () {
                 const avatarElement = document.createElement('div');
                 avatarElement.classList.add('avatar');
                 avatarElement.innerHTML = `
@@ -32,14 +38,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             };
 
-            img.onerror = function() {
+            img.onerror = function () {
                 console.log(`${imgSrc} not found.`);
             };
         }
     }
 
     // Load female avatars by default
-    loadAvatars('female', 50);  // Adjust this number to the maximum expected images
+    loadAvatars('female', 50); // Adjust this number to the maximum expected images
 
     // Add event listeners to buttons for gender toggle
     document.getElementById('female').addEventListener('click', () => {
@@ -58,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
     colorCircles.forEach(circle => {
         circle.addEventListener('click', (e) => {
             const newColor = e.target.style.backgroundColor;
-    
+
             // Toggle background color
             if (currentCircle === circle) {
                 selectedColor = 'rgba(255, 255, 255, 0)'; // Reset to transparent
@@ -73,19 +79,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 currentCircle = circle; // Update the current circle
                 currentCircle.classList.add('selected'); // Add tick to the selected circle
             }
-    
+
             document.querySelectorAll('.avatar img').forEach(img => {
                 img.style.backgroundColor = selectedColor; // Change background color of avatars
             });
         });
     });
-    
 
     // Function to download the avatar with the selected background color
     function downloadImage(src, bgColor) {
         const img = new Image();
         img.src = src;
-        img.onload = function() {
+        img.onload = function () {
             const canvas = document.createElement('canvas');
             const ctx = canvas.getContext('2d');
 
@@ -107,4 +112,30 @@ document.addEventListener('DOMContentLoaded', function() {
             link.click();
         };
     }
+
+    // Event listener for the floating button to open the color picker modal
+    colorPickerBtn.addEventListener('click', () => {
+        colorPickerModal.style.display = 'block';
+    });
+
+    // Event listener for closing the modal
+    closeModalBtn.addEventListener('click', () => {
+        colorPickerModal.style.display = 'none';
+    });
+
+    // Event listener for applying the hex color
+    applyColorBtn.addEventListener('click', () => {
+        const hexColor = hexColorInput.value;
+
+        // Validate hex color format
+        if (/^#([0-9A-F]{3}){1,2}$/i.test(hexColor)) {
+            selectedColor = hexColor;
+            document.querySelectorAll('.avatar img').forEach(img => {
+                img.style.backgroundColor = selectedColor; // Change background color of avatars
+            });
+            colorPickerModal.style.display = 'none'; // Close modal
+        } else {
+            alert('Please enter a valid hex color code (e.g., #FFFFFF)');
+        }
+    });
 });
