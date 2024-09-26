@@ -118,7 +118,7 @@ h2 {
 }
 
 .avatar img {
-    border-radius: 10px; /* Slightly rounded corners */
+    border-radius: 100px; /* Slightly rounded corners */
     width: 180px;  /* Increased size */
     height: 180px; /* Increased size */
     object-fit: cover;
