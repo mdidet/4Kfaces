@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Add event listener to download button
                 avatarElement.querySelector('.btn-download').addEventListener('click', (e) => {
                     e.preventDefault();
-                    downloadImage(imgSrc, selectedColor);
+                    downloadImage(imgSrc, avatarElement.querySelector('img').style.backgroundColor);
                 });
             };
 
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
             canvas.width = img.width;
             canvas.height = img.height;
 
-            // Fill canvas with background color
+            // Fill canvas with the background color
             ctx.fillStyle = bgColor;
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -112,6 +112,27 @@ document.addEventListener('DOMContentLoaded', function () {
             link.click();
         };
     }
+
+    // Function to generate a random color in hex format
+    function getRandomColor() {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
+    // Event listener for the random color button
+    document.getElementById('randomly-picker-btn').addEventListener('click', () => {
+        // Generate a random color and update selectedColor
+        selectedColor = getRandomColor();
+
+        // Apply the random color to all avatar backgrounds
+        document.querySelectorAll('.avatar img').forEach(img => {
+            img.style.backgroundColor = selectedColor; // Change background color of avatars
+        });
+    });
 
     // Event listener for the floating button to open the color picker modal
     colorPickerBtn.addEventListener('click', () => {
