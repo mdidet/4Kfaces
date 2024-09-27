@@ -237,7 +237,7 @@ font-size: 20px;
 
 /* Floating Button */
 .randomly-btn {
-    position: sticky;
+    position: fixed;
     animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
     bottom: 150px;
     left: 90%;
@@ -263,7 +263,7 @@ font-size: 20px;
 
 /* Floating Button */
 .floating-btn {
-    position: sticky;
+    position: fixed;
     animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
     bottom: 50px;
     left: 90%;
