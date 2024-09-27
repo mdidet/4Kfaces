@@ -116,7 +116,7 @@ header {
     display: inline-flex;
     gap: 20px;
     margin: 30px 0;
-    background: #ffffff;
+    background: #ffffff5d;
     padding: 10px;
     border-radius: 30px;
 }
@@ -124,7 +124,7 @@ header {
 .gender-toggle button {
     padding: 10px 30px;
     border: none;
-    background: #ffffff;
+    background: #ffffff00;
     border-radius: 30px;
     font-size: 16px;
     cursor: pointer;
@@ -133,12 +133,12 @@ header {
 }
 
 .gender-toggle button.active {
-    background-color: #A45EE5;
+    background: linear-gradient(45deg, #B044FF, #5264FF);
     color: white;
 }
 
 .gender-toggle button:hover {
-    background-color: #d5c2f7;
+    background-color: #d5c2f700;
 }
 
 /* Avatar Grid */
@@ -232,13 +232,42 @@ font-size: 20px;
 
 
 
+
+
+
+/* Floating Button */
+.randomly-btn {
+    position: sticky;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    bottom: 150px;
+    left: 90%;
+    background: linear-gradient(45deg, #B044FF, #5264FF);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+
+
+
+
+
 /* Floating Button */
 .floating-btn {
     position: sticky;
     animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
     bottom: 50px;
     left: 90%;
-    background-color: #A45EE5;
+    background: linear-gradient(45deg, #B044FF, #5283ff, #ff52b7, #ffd452);
     color: white;
     border: none;
     border-radius: 50%;
@@ -254,8 +283,8 @@ font-size: 20px;
 }
 
 .floating-btn:hover {
-    background-color: #ffffff; /* Darker shade on hover */
-    color: #AD49E1;
+    background: #ffffff;
+    color:  #B044FF;
 }
 
 
@@ -323,7 +352,7 @@ h5 {
 
 /* Apply Button */
 #apply-color {
-    background-color: #A45EE5; /* Button color */
+    background: linear-gradient(45deg, #B044FF, #5264FF); /* Button color */
     color: #ffffff; /* Text color */
     padding: 10px; /* Match padding with the input */
     width: 60%; /* Same width as input */
@@ -336,7 +365,7 @@ h5 {
 }
 
 #apply-color:hover {
-    background-color: #ffffff; /* Darker color on hover */
+    background: #ffffff; /* Darker color on hover */
     color: #A45EE5;
     border: solid 1px;
 }
