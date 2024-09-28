@@ -257,17 +257,13 @@ font-size: 20px;
 }
 
 
-
-
-
-
 /* Floating Button */
 .floating-btn {
     position: fixed;
     animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
     bottom: 50px;
     left: 90%;
-    background: linear-gradient(45deg, #B044FF, #5283ff, #ff52b7, #ffd452);
+    background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
     color: white;
     border: none;
     border-radius: 50%;
@@ -288,12 +284,11 @@ font-size: 20px;
 }
 
 
-
 /* Modal Styles */
 .modal {
     display: none; /* Hidden by default */
     position: fixed;
-    z-index: 1000;
+    z-index: 100;
     left: 0;
     top: 0;
     width: 100%;
@@ -307,12 +302,12 @@ font-size: 20px;
 /* Modal Content */
 .modal-content {
     background-color: #ffffff;
-    margin: auto;
-    padding: 20px; /* Keep a little padding around the content */
+    margin: 20px auto;
+    padding: 30px; /* Keep a little padding around the content */
     border-radius: 30px; /* Rounded corners */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
     width: 300px; /* Fixed width */
-    height: 250px; /* Fixed height to maintain square shape */
+    height: 220px; /* Fixed height to maintain square shape */
     display: flex; /* Flexbox for centering */
     flex-direction: column; /* Vertical layout */
     align-items: center; /* Centering items horizontally */
@@ -337,7 +332,7 @@ h5 {
     height: 30px;
     padding: 10px;
     padding-left: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #e5e5e5;
     border-radius: 100px; /* Rounded input */
     font-size: 16px;
     margin-bottom: 12px; /* Space below input for the button */
@@ -370,19 +365,6 @@ h5 {
     border: solid 1px;
 }
 
-/* Close Button */
-.close-btn {
-    color: #7f7f7f; /* Button color */
-    font-size: 30px; /* Font size */
-    font-weight: normal; /* Bold text */
-    position: absolute; /* Positioned in the corner */
-    right: 20px; /* Right alignment */
-    top: 20px; /* Top alignment */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: color 0.3s, transform 0.3s; /* Smooth transition */
-    border: none; /* No border */
-    background: none; /* No background */
-}
 
 /* Modern hover effect */
 .close-btn:hover {
