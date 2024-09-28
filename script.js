@@ -9,55 +9,107 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let selectedColor = 'rgba(255, 255, 255, 0)'; // Default to transparent
     let currentCircle = null; // Track the currently selected circle
+    let maleCount = 0; // Count of male avatars
+    let femaleCount = 0; // Count of female avatars
+    const totalAvatars = 100; // Change this to the total number of avatars available
 
-    // Function to load avatars dynamically
-    function loadAvatars(gender, totalImages) {
-        avatarGrid.innerHTML = ''; // Clear previous avatars
+    // Function to load all avatars
+    function loadAllAvatars() {
+        for (let i = 1; i <= totalAvatars; i++) {
+            const imgSrcMale = `images/male${i}.png`;
+            const imgSrcFemale = `images/female${i}.png`;
 
-        for (let i = 1; i <= totalImages; i++) {
-            const imgSrc = `images/${gender}${i}.png`;
-
-            const img = new Image();
-            img.src = imgSrc;
-
-            img.onload = function () {
-                const avatarElement = document.createElement('div');
-                avatarElement.classList.add('avatar');
-                avatarElement.innerHTML = `
-                    <div class="avatar-container">
-                        <img src="${imgSrc}" alt="Avatar" style="background-color: ${selectedColor};">
-                        <a href="#" class="btn-download">Download</a>
-                    </div>
-                `;
-                avatarGrid.appendChild(avatarElement);
-
-                // Add event listener to download button
-                avatarElement.querySelector('.btn-download').addEventListener('click', (e) => {
-                    e.preventDefault();
-                    downloadImage(imgSrc, avatarElement.querySelector('img').style.backgroundColor);
-                });
+            // Check for male avatars
+            const maleImg = new Image();
+            maleImg.src = imgSrcMale;
+            maleImg.onload = function () {
+                maleCount++;
+                createAvatarElement(maleImg.src);
             };
 
-            img.onerror = function () {
-                console.log(`${imgSrc} not found.`);
+            // Check for female avatars
+            const femaleImg = new Image();
+            femaleImg.src = imgSrcFemale;
+            femaleImg.onload = function () {
+                femaleCount++;
+                createAvatarElement(femaleImg.src);
             };
+
+            // Log if image is not found
+            maleImg.onerror = () => console.log(`${imgSrcMale} not found.`);
+            femaleImg.onerror = () => console.log(`${imgSrcFemale} not found.`);
         }
     }
 
-    // Load female avatars by default
-    loadAvatars('female', 50); // Adjust this number to the maximum expected images
+    // Function to create avatar element
+    function createAvatarElement(imgSrc) {
+        const avatarElement = document.createElement('div');
+        avatarElement.classList.add('avatar');
+        avatarElement.innerHTML = `
+            <div class="avatar-container">
+                <img src="${imgSrc}" alt="Avatar" style="background-color: ${selectedColor};">
+                <a href="#" class="btn-download">Download</a>
+            </div>
+        `;
+        avatarGrid.appendChild(avatarElement);
 
-    // Add event listeners to buttons for gender toggle
-    document.getElementById('female').addEventListener('click', () => {
-        loadAvatars('female', 50);
-        document.getElementById('female').classList.add('active');
+        // Add event listener to download button
+        avatarElement.querySelector('.btn-download').addEventListener('click', (e) => {
+            e.preventDefault();
+            downloadImage(imgSrc, avatarElement.querySelector('img').style.backgroundColor);
+        });
+    }
+
+    // Load random avatars by default
+    function loadRandomAvatars() {
+        avatarGrid.innerHTML = ''; // Clear previous avatars
+        const randomAvatars = [];
+        const totalAvailable = Math.max(maleCount, femaleCount);
+
+        for (let i = 0; i < totalAvailable; i++) {
+            const gender = (i % 2 === 0) ? 'male' : 'female';
+            const imgSrc = `images/${gender}${Math.floor(i / 2) + 1}.png`;
+            randomAvatars.push(imgSrc);
+        }
+
+        randomAvatars.forEach(imgSrc => {
+            createAvatarElement(imgSrc);
+        });
+    }
+
+    // Load all avatars on page load
+    loadAllAvatars();
+
+    // Load random avatars after all avatars are loaded
+    setTimeout(loadRandomAvatars, 1000); // Adjust delay as necessary
+
+    // Event listener for random avatars
+    document.getElementById('random').addEventListener('click', () => {
+        loadRandomAvatars();
+        document.getElementById('random').classList.add('active');
+        document.getElementById('female').classList.remove('active');
         document.getElementById('male').classList.remove('active');
     });
 
+    // Event listeners for female and male buttons
+    document.getElementById('female').addEventListener('click', () => {
+        avatarGrid.innerHTML = ''; // Clear previous avatars
+        for (let i = 1; i <= femaleCount; i++) {
+            createAvatarElement(`images/female${i}.png`);
+        }
+        document.getElementById('female').classList.add('active');
+        document.getElementById('male').classList.remove('active');
+        document.getElementById('random').classList.remove('active');
+    });
+
     document.getElementById('male').addEventListener('click', () => {
-        loadAvatars('male', 50);
+        avatarGrid.innerHTML = ''; // Clear previous avatars
+        for (let i = 1; i <= maleCount; i++) {
+            createAvatarElement(`images/male${i}.png`);
+        }
         document.getElementById('male').classList.add('active');
         document.getElementById('female').classList.remove('active');
+        document.getElementById('random').classList.remove('active');
     });
 
     // Add event listeners for color circles
@@ -140,8 +192,10 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Event listener for closing the modal
-    closeModalBtn.addEventListener('click', () => {
-        colorPickerModal.style.display = 'none';
+    window.addEventListener('click', (event) => {
+        if (event.target === colorPickerModal) {
+            colorPickerModal.style.display = 'none';
+        }
     });
 
     // Event listener for applying the hex color
@@ -160,3 +214,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+// Call loadAllAvatars() to initially load all avatars
+loadAllAvatars();
