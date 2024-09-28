@@ -2,7 +2,7 @@
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    background: linear-gradient(135deg, #dbcef6 0%, #d8faff 100%);
+    background: linear-gradient(95deg, #edd2ff, #cbd0ff, #d3fff0);
     color: #333;
     display: flex;
     flex-direction: column;
@@ -12,26 +12,54 @@ body {
     box-sizing: border-box;
 }
 
+.hello {
+    margin-top: 60px;
+    margin-bottom: 50px;
+}
+
 header h1 {
     font-family: poppins; /* Replace with your desired font */
 }
 
-h2 {
-    font-size: 2.2rem;
-    font-family: rakkas;
-    font-weight: 600;
-    font-size: 50px;
-    margin-bottom: 20px;
+h1 {
+    font-family: system-ui; /* Replace with your desired font */
+    font-size: 70px;
+    font-weight: 800;
     text-align: center;
 }
 
+
+.gradient-text {
+    background: linear-gradient(45deg, #B044FF, #5264FF); /* Example gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+
+
+h6 {
+    font-size: 40px;
+    text-align: center;
+    position: center;
+    font-family: poppins;
+    font-weight: 300;
+
+}
+
+h1, h6 {
+    margin: 1px; /* Remove default margins */
+}
+
+    
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 1200px;
-    padding: 20px;
+    max-width: 1500px;
+    padding: 40px;
 }
 
 .logo {
@@ -40,7 +68,7 @@ header {
 }
 
 .logo img {
-    width: 50px;
+    width: 60px;
     margin-right: 0px;
 }
 
@@ -71,16 +99,19 @@ header {
 
 .main-content {
     text-align: center;
-    margin: 50px 0;
+    line-height: 1.2;
+    margin: 0px;
     width: 100%;
 }
 
 .color-circles {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    margin: 30px 0;
+    gap: 17px;
+    margin-top: 0px;
 }
+
+
 
 .color-picker {
     display: flex;
@@ -115,7 +146,7 @@ header {
 .gender-toggle {
     display: inline-flex;
     gap: 20px;
-    margin: 30px 0;
+    margin: 30px;
     background: #ffffff5d;
     padding: 10px;
     border-radius: 30px;
@@ -143,11 +174,12 @@ header {
 
 /* Avatar Grid */
 .avatar-grid {
+    justify-content: center;
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5 avatars per row */
-    gap: 20px;
+    grid-template-columns: repeat(6, 1fr); /* 7 columns */
+    gap: 35px;
     max-width: 1100px;
-    margin: 0 auto;
+    margin: 50px auto;
     padding: 20px;
 }
 
@@ -163,17 +195,22 @@ header {
     object-fit: cover;
 }
 
+.avatar:hover img {
+    filter: blur(5px); /* Apply blur effect on hover */
+    transform: scale(1.1); /* Slightly scale up the avatar */
+}
+
 .avatar .btn-download {
     position: absolute; /* Positioning the button */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); /* Centering */
-    background-color: #A45EE5; /* Background for button */
+    background: linear-gradient(45deg, #B044FF, #5264FF); /* Background for button */
     color: white;
     border: none;
     border-radius: 30px;
     padding: 10px 20px;
-    font-weight: bold;
+    font-weight: normal;
     cursor: pointer;
     display: none; /* Hidden by default */
 }
@@ -183,20 +220,13 @@ header {
     display: block; /* Show button on hover */
 }
 
+
 footer {
     margin-top: 40px;
     padding: 20px;
     text-align: center;
     color: #666;
 }
-
-
-h5 {
-font-family: poppins;
-font-size: 20px;
-}
-
-
 
 
 /* Apply Color Button */
@@ -288,43 +318,44 @@ font-size: 20px;
 .modal {
     display: none; /* Hidden by default */
     position: fixed;
-    z-index: 100;
+    z-index: 100; /* Higher z-index to appear above other elements */
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%; /* Full width to cover the viewport */
+    height: 100%; /* Full height to cover the viewport */
+    overflow: auto; /* Allow scrolling if necessary */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
     padding: 0;
     transition: opacity 0.3s ease; /* Smooth fade-in/out */
 }
 
 /* Modal Content */
 .modal-content {
-    background-color: #ffffff;
-    margin: 20px auto;
-    padding: 30px; /* Keep a little padding around the content */
+    background-color: #ffffff; /* White background */
+    margin: 20px auto; /* Center with a margin */
+    padding: 30px; /* Padding around the content */
     border-radius: 30px; /* Rounded corners */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
     width: 300px; /* Fixed width */
-    height: 220px; /* Fixed height to maintain square shape */
-    display: flex; /* Flexbox for centering */
+    max-width: 60%; /* Responsive max width */
+    height: 300px; /* Fixed height to maintain shape */
+    display: flex; /* Use flexbox for centering */
     flex-direction: column; /* Vertical layout */
-    align-items: center; /* Centering items horizontally */
-    justify-content: center; /* Centering items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
     position: absolute; /* Absolute positioning for centering */
-    top: 50%; /* Move to the middle of the screen */
-    left: 50%; /* Move to the middle of the screen */
-    transform: translate(-50%, -50%); /* Translate back by half of its width and height */
+    top: 50%; /* Position from the top */
+    left: 50%; /* Position from the left */
+    transform: translate(-50%, -50%); /* Translate back by half of width and height */
 }
 
-/* Title */
+
+
 h5 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px; /* Space below title */
-    text-align: center; /* Center the title text */
-}
+    font-family: poppins;
+    font-size: 25px;
+    }
+    
 
 /* Color Input */
 #hex-color {
@@ -401,4 +432,28 @@ h5 {
     #apply-color {
         font-size: 14px; /* Smaller button text */
     }
+}
+
+
+
+
+
+
+
+
+/* Add this CSS to your stylesheet */
+@keyframes popper {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.popper-animation {
+    animation: popper 0.3s ease-in-out;
 }
