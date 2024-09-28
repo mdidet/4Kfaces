@@ -193,10 +193,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Event listener for closing the modal
     window.addEventListener('click', (event) => {
-        if (event.target === colorPickerModal) {
-            colorPickerModal.style.display = 'none';
-        }
-    });
+    if (event.target === colorPickerModal) {
+        colorPickerModal.style.display = 'none';
+    }
+});
 
     // Event listener for applying the hex color
     applyColorBtn.addEventListener('click', () => {
