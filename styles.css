@@ -29,10 +29,6 @@ header {
     margin-right: 0px;
 }
 
-.followme img {
-    width: 20px;
-}
-
 .followme {
     display: flex;
     align-items: center;
@@ -48,6 +44,10 @@ header {
     font-weight: 600;
     cursor: pointer;
     transition: background-color 0.3s;
+}
+
+.followme img {
+    width: 20px;
 }
 
 .followme:hover {
@@ -67,6 +67,13 @@ h1 {
     text-align: center;
 }
 
+h5 {
+    font-family: fredoka; /* Replace with your desired font */
+    font-size: 1.3vw; /* Responsive font size */
+    font-weight: 600;
+    text-align: center;
+}
+
 .gradient-text {
     background: linear-gradient(45deg, #B044FF, #5264FF);
     -webkit-background-clip: text;
@@ -82,7 +89,8 @@ h6 {
     font-weight: 300;
 }
 
-h1, h6 {
+h1,
+h6 {
     margin: 1px; /* Remove default margins */
 }
 
@@ -93,7 +101,6 @@ h1, h6 {
     margin: 0px;
     width: 100%;
 }
-
 
 /* Gender Toggle Styles */
 .gender-toggle {
@@ -134,6 +141,7 @@ h1, h6 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Responsive grid */
     gap: 30px; /* Reduced gap */
+    row-gap: 30px;
     max-width: 1400px;
     margin: 0px auto; /* Adjust margin */
     padding: 10px; /* Adjust padding */
@@ -145,7 +153,7 @@ h1, h6 {
 }
 
 .avatar img {
-    border-radius: 100px;
+    border-radius: 30px;
     width: 100%; /* Make image responsive */
     height: auto; /* Maintain aspect ratio */
     object-fit: cover;
@@ -160,6 +168,7 @@ h1, h6 {
     position: absolute;
     top: 50%;
     left: 50%;
+    font-size: 20px;
     font-family: fredoka;
     text-decoration: none;
     transform: translate(-50%, -50%);
@@ -167,7 +176,7 @@ h1, h6 {
     color: white;
     border: none;
     border-radius: 30px;
-    padding: 8px 15px; /* Reduced padding for mobile */
+    padding: 9px 17px; /* Reduced padding for mobile */
     font-weight: normal;
     cursor: pointer;
     display: none; /* Hidden by default */
@@ -221,7 +230,7 @@ h1, h6 {
 .floating-btn {
     position: fixed;
     animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-    bottom: 150px;
+    bottom: 50px;
     left: 90%;
     background: linear-gradient(45deg, #34cef9, #61ee2a, #d7cb28);
     color: white;
@@ -241,7 +250,7 @@ h1, h6 {
 .randomly-btn {
     position: fixed;
     animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-    bottom: 250px;
+    bottom: 150px;
     left: 90%;
     background: linear-gradient(45deg, #B044FF, #5264FF);
     color: white;
@@ -258,11 +267,10 @@ h1, h6 {
     transition: background-color 0.3s;
 }
 
-
 .makepng {
     position: fixed;
     animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-    bottom: 50px;
+    bottom: 250px;
     left: 90%;
     background: linear-gradient(45deg, #ff4444, #ff8652);
     color: white;
@@ -283,13 +291,15 @@ h1, h6 {
     background: #ffffff;
     color: #5264FF;
 }
+
 .floating-btn:hover {
     background: #ffffff;
     color: #61ee2a;
 }
+
 .makepng:hover {
     background: #ffffff;
-    color:  #ff4444;
+    color: #ff4444;
 }
 
 /* Modal Overlay */
@@ -308,112 +318,48 @@ h1, h6 {
 .modal-content {
     display: flex;
     flex-direction: column; /* Stack children vertically */
-    justify-content: center; /* Center vertically */
-    align-items: center; /* Center horizontally */
-    background-color: white; /* Background of the modal */
-    padding: 25px;
-    border-radius: 25px;
-    position: absolute; /* Position relative to the overlay */
-    top: 50%; /* Move down from the top */
-    left: 50%; /* Move in from the left */
-    transform: translate(-50%, -50%); /* Centering transformation */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 40px;
+    width: 80%; /* Adjust width */
+    max-width: 300px; /* Set max width */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-h5 {
-    font-size: 1.3vw; /* Responsive font size */
-    text-align: center;
-    font-family: poppins;
-    font-weight: 600;
-}
-
-/* Close Button in Modal */
+/* Close Button */
 .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-}
-
-/* Footer Styles */
-footer {
-    margin-top: auto;
-    padding: 20px 0;
-    text-align: center;
-}
-
-footer a {
+    align-self: flex-end; /* Align close button to the right */
+    font-size: 20px;
     color: #B044FF;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
+    cursor: pointer;
 }
 
 /* Responsive Media Queries */
 @media (max-width: 768px) {
     h1 {
-        font-size: 8vw; /* Adjust for tablets and smaller devices */
+        font-size: 8vw; /* Adjust font size for mobile */
     }
 
     h6 {
-        font-size: 5vw; /* Adjust for tablets and smaller devices */
+        font-size: 5vw; /* Adjust font size for mobile */
     }
 
-    .hello {
-        margin-top: 20px; /* Adjust for mobile */
-        margin-bottom: 20px; /* Adjust for mobile */
-    }
-
-    .color-circles,
-    .gender-toggle {
-        flex-direction: column; /* Stack items on smaller screens */
-        gap: 10px; /* Reduced gap for smaller screens */
+    .followme {
+        font-size: 12px; /* Reduced font size for mobile */
+        padding: 12px 15px; /* Reduced padding for mobile */
     }
 
     .gender-toggle button {
-        font-size: 12px; /* Smaller button text */
+        font-size: 18px; /* Adjusted for mobile */
     }
 
-    #hex-color {
-        width: 100%; /* Full width on smaller screens */
-    }
-}
-
-@media (max-width: 480px) {
-    header {
-        padding: 10px; /* Further reduce padding for mobile */
-    }
-
-    .logo img {
-        width: 50px; /* Smaller logo */
-    }
-
-    .followme img {
-        width: 18px; /* Smaller icons */
-    }
-
-    h1 {
-        font-size: 10vw; /* Further adjust font size for mobile */
-    }
-
-    h6 {
-        font-size: 6vw; /* Further adjust font size for mobile */
-    }
-
-    .avatar-grid {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Adjust grid for mobile */
-    }
-
-    .circle {
-        width: 30px; /* Smaller color circles */
-        height: 30px; /* Smaller color circles */
+    #apply-color {
+        width: 80%; /* Adjusted width for mobile */
     }
 }
