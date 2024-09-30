@@ -17,6 +17,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 30px;
     width: 100%;
     max-width: 1500px;
     padding: 20px; /* Reduced padding for mobile */
@@ -24,7 +25,7 @@ header {
 }
 
 .logo img {
-    width: 60px;
+    width: 65px;
     margin-right: 0px;
 }
 
@@ -40,7 +41,7 @@ header {
     background-color: #000000;
     color: white;
     text-decoration: none;
-    padding: 8px 12px; /* Reduced padding for mobile */
+    padding: 15px 20px; /* Reduced padding for mobile */
     border-radius: 30px;
     border: none;
     font-size: 14px;
@@ -50,7 +51,7 @@ header {
 }
 
 .followme:hover {
-    background-color: #d2d2d2;
+    transform: scale(1.1);
 }
 
 /* Hero Section Styles */
@@ -101,15 +102,14 @@ h1, h6 {
     margin: 50px; /* Reduced margin for mobile */
     background: #ffffff5d;
     font-family: fredoka;
-    padding: 12px;
+    padding: 10px;
     border-radius: 100px;
 }
 
 .gender-toggle button {
-    padding: 8px 15px; /* Reduced padding for mobile */
+    padding: 10px 20px; /* Reduced padding for mobile */
     border: none;
     font-family: fredoka;
-    padding: 14px;
     background: #ffffff00;
     border-radius: 30px;
     font-size: 20px; /* Reduced font size */
@@ -121,7 +121,7 @@ h1, h6 {
 .gender-toggle button.active {
     background: linear-gradient(45deg, #B044FF, #5264FF);
     color: white;
-    padding: 18px;
+    padding: 10px 20px;
 }
 
 .gender-toggle button:hover {
