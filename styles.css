@@ -121,7 +121,7 @@ h1, h6 {
 .gender-toggle button.active {
     background: linear-gradient(45deg, #B044FF, #5264FF);
     color: white;
-    padding: 10px 20px;
+    padding: 15px 20px;
 }
 
 .gender-toggle button:hover {
