@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Load random avatars after all avatars are loaded
     setTimeout(loadRandomAvatars, 1000); // Adjust delay as necessary
 
-    // Event listener for random avatars
+    // Event listener for the random avatars
     document.getElementById('random').addEventListener('click', () => {
         loadRandomAvatars();
         document.getElementById('random').classList.add('active');
@@ -193,10 +193,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Event listener for closing the modal
     window.addEventListener('click', (event) => {
-    if (event.target === colorPickerModal) {
-        colorPickerModal.style.display = 'none';
-    }
-});
+        if (event.target === colorPickerModal) {
+            colorPickerModal.style.display = 'none';
+        }
+    });
 
     // Event listener for applying the hex color
     applyColorBtn.addEventListener('click', () => {
@@ -213,6 +213,26 @@ document.addEventListener('DOMContentLoaded', function () {
             alert('Please enter a valid hex color code (e.g., #FFFFFF)');
         }
     });
+
+    // New button for making PNG
+// New button for making PNG
+document.getElementById('makpng').addEventListener('click', () => {
+    console.log('Make it PNG button clicked!'); // Debug log
+
+    // Get all avatar images currently displayed in the grid
+    const avatarImages = avatarGrid.querySelectorAll('.avatar img');
+
+    // Log the number of images found
+    console.log(`Found ${avatarImages.length} avatar images.`);
+
+    // Apply transparent background to all avatars
+    avatarImages.forEach(img => {
+        img.style.backgroundColor = 'rgba(255, 255, 255, 0)'; // Set background to transparent
+        console.log('Background color set to transparent for image:', img.src); // Debug log
+    });
+});
+
+    // Other event listeners and functions remain unchanged...
 });
 
 // Call loadAllAvatars() to initially load all avatars
