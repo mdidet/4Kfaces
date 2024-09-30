@@ -7,80 +7,72 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <title>4KFaces</title>
+    <title>4K Faces</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6256710763134118"
      crossorigin="anonymous"></script>
 </head>
 <body>
-    
 
-    
-    
+    <!-- Header Section -->
     <header>
         <div class="logo">
             <img src="logo.png" alt="Avataro Logo">
         </div>
-        <a href="https://www.threads.net/@othmane.mdidet" class="btn-download" download>
+        <a href="https://www.threads.net/@othmane.mdidet" class="followme" download>
             <img src="https://i.ibb.co/Rj6sDCG/Threads-app-logo-white-png-transparent.png" alt="threads icon">
             othmane
         </a>
     </header>
 
-
+    <!-- Introduction Section -->
     <section class="hello"> 
-
-          <div> 
-             <h1> 4K <span class="gradient-text">FCAES</span> </h1>
-             <h6> for your creative UI project </h6>        
-          </div>
-
+        <div> 
+            <h1>4K <span class="gradient-text">FACES</span></h1>
+            <h6>For your creative UI project</h6>        
+        </div>
     </section>
 
-
+    <!-- Main Content Section -->
     <section class="main-content">      
-       
+
+        <!-- Gender Toggle Section -->
         <div class="gender-toggle">
             <button id="random" class="active">Random</button>
             <button id="female">Female</button>
             <button id="male">Male</button>
         </div>
 
-        <div class="color-circles">
-            <div class="circle" style="background-color: #EF5A6F;" data-color="#FF0000"></div>
-            <div class="circle" style="background-color: #73EC8B;" data-color="#00FF00"></div>
-            <div class="circle" style="background-color: #4379F2;" data-color="#0000FF"></div>
-            <div class="circle" style="background-color: #AD49E1;" data-color="#FF00FF"></div>
-            <div class="circle" style="background-color: #48CFCB;" data-color="#00FFFF"></div>
-            <div class="circle" style="background-color: #FF885B;" data-color="#FFA500"></div>
-            <div class="circle" style="background-color: #D2649A;" data-color="#800080"></div>
-            <div class="circle" style="background-color: #A6B37D;" data-color="#800080"></div>
-        </div>
+        <!-- Color Circles Section -->
 
+        <!-- Avatar Grid Section -->
         <div class="avatar-grid" id="avatar-grid">
             <!-- Avatars will be dynamically inserted here -->
         </div>
     </section>
 
-
-
-
-
+    <!-- Floating Buttons Section -->
     <button class="floating-btn" id="color-picker-btn">
-        <i class="fas fa-fill-drip"></i> <!-- Replace with desired icon -->
+        <ion-icon name="color-fill-sharp"></ion-icon> <!-- Replace with desired icon -->
     </button>
-
-
-
 
     <button class="randomly-btn" id="randomly-picker-btn">
-        <i class="fas fa-random"></i> <!-- Replace with desired icon -->
+        <ion-icon name="sparkles-sharp"></ion-icon> <!-- Replace with desired icon -->
+    </button>
+
+    <button class="makepng" id="makpng">
+        <ion-icon name="leaf-sharp"></ion-icon> <!-- Replace with desired icon -->
     </button>
 
 
-
+    <!-- Modal for Color Picker -->
     <div class="modal" id="color-picker-modal">
         <div class="modal-content">
             <h5>Enter The Hex Code</h5>
@@ -89,8 +81,9 @@
         </div>
     </div>
 
+    <!-- Footer Section -->
     <footer>
-        <p>© 2024 4Kfaces | Built by Othmane Mdidet</p>
+        <p>© 2024 4KFaces | Built by Othmane Mdidet</p>
     </footer>
 
     <script src="script.js"></script>
