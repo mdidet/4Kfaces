@@ -281,15 +281,15 @@ h1, h6 {
 
 .randomly-btn:hover {
     background: #ffffff;
-    color: #B044FF;
+    color: #5264FF;
 }
 .floating-btn:hover {
     background: #ffffff;
-    color: #B044FF;
+    color: #61ee2a;
 }
 .makepng:hover {
     background: #ffffff;
-    color: #B044FF;
+    color:  #ff4444;
 }
 
 /* Modal Overlay */
