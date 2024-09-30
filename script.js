@@ -112,32 +112,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('random').classList.remove('active');
     });
 
-    // Add event listeners for color circles
-    colorCircles.forEach(circle => {
-        circle.addEventListener('click', (e) => {
-            const newColor = e.target.style.backgroundColor;
-
-            // Toggle background color
-            if (currentCircle === circle) {
-                selectedColor = 'rgba(255, 255, 255, 0)'; // Reset to transparent
-                currentCircle.classList.remove('selected'); // Remove tick from circle
-                currentCircle = null; // Reset the current circle
-            } else {
-                // Remove tick from the previously selected circle, if any
-                if (currentCircle) {
-                    currentCircle.classList.remove('selected');
-                }
-                selectedColor = newColor; // Set to selected color
-                currentCircle = circle; // Update the current circle
-                currentCircle.classList.add('selected'); // Add tick to the selected circle
-            }
-
-            document.querySelectorAll('.avatar img').forEach(img => {
-                img.style.backgroundColor = selectedColor; // Change background color of avatars
-            });
-        });
-    });
-
+  
     // Function to download the avatar with the selected background color
     function downloadImage(src, bgColor) {
         const img = new Image();
@@ -166,14 +141,16 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Function to generate a random color in hex format
-    function getRandomColor() {
-        const letters = '0123456789ABCDEF';
-        let color = '#';
-        for (let i = 0; i < 6; i++) {
-            color += letters[Math.floor(Math.random() * 16)];
-        }
-        return color;
-    }
+ 
+function getRandomColor() {
+    const getPastelValue = () => Math.floor((Math.random() * 128) + 127); // Values between 127 and 255 for light colors
+    const r = getPastelValue();
+    const g = getPastelValue();
+    const b = getPastelValue();
+
+    return `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)}`; // Convert RGB to hex
+}
+
 
     // Event listener for the random color button
     document.getElementById('randomly-picker-btn').addEventListener('click', () => {
@@ -214,26 +191,90 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // New button for making PNG
-// New button for making PNG
-document.getElementById('makpng').addEventListener('click', () => {
-    console.log('Make it PNG button clicked!'); // Debug log
+    
 
-    // Get all avatar images currently displayed in the grid
-    const avatarImages = avatarGrid.querySelectorAll('.avatar img');
-
-    // Log the number of images found
-    console.log(`Found ${avatarImages.length} avatar images.`);
-
-    // Apply transparent background to all avatars
-    avatarImages.forEach(img => {
+ // Event listener for making PNG
+ document.getElementById('makpng').addEventListener('click', () => {
+    document.querySelectorAll('.avatar img').forEach(img => {
         img.style.backgroundColor = 'rgba(255, 255, 255, 0)'; // Set background to transparent
-        console.log('Background color set to transparent for image:', img.src); // Debug log
+    });
+    selectedColor = 'rgba(255, 255, 255, 0)'; // Update the selected color state to transparent
+});
+});
+
+
+
+
+// Hide the button initially
+const makPngBtn = document.getElementById('makpng');
+makPngBtn.style.display = 'none';
+
+// Function to check if avatars have a background color and show the button
+function checkAvatarBackgrounds() {
+    const avatars = document.querySelectorAll('.avatar img');
+    let hasBgColor = false;
+
+    avatars.forEach(img => {
+        const bgColor = window.getComputedStyle(img).backgroundColor; // Get the computed background color
+        if (bgColor && bgColor !== 'rgba(255, 255, 255, 0)' && bgColor !== 'transparent') {
+            hasBgColor = true;
+        }
+    });
+
+    if (hasBgColor) {
+        makPngBtn.style.display = 'block'; // Show the button
+    } else {
+        makPngBtn.style.display = 'none'; // Hide the button
+    }
+}
+
+// Add this to update the button visibility after background color is applied
+document.querySelectorAll('.circle').forEach(circle => {
+    circle.addEventListener('click', () => {
+        setTimeout(checkAvatarBackgrounds, 100); // Small delay to ensure color is applied
     });
 });
 
-    // Other event listeners and functions remain unchanged...
+document.getElementById('apply-color').addEventListener('click', () => {
+    setTimeout(checkAvatarBackgrounds, 100); // Small delay to ensure color is applied
 });
+
+document.getElementById('randomly-picker-btn').addEventListener('click', () => {
+    setTimeout(checkAvatarBackgrounds, 100); // Small delay to ensure color is applied
+});
+
+// Event listener for making PNG
+makPngBtn.addEventListener('click', () => {
+    document.querySelectorAll('.avatar img').forEach(img => {
+        img.style.backgroundColor = 'rgba(255, 255, 255, 0)'; // Set background to transparent
+    });
+    selectedColor = 'rgba(255, 255, 255, 0)'; // Update the selected color state to transparent
+
+    // Hide the button again after resetting the backgrounds
+    makPngBtn.style.display = 'none';
+});
+
+
+
+
+// Event listener for making PNG with scatter background animation
+document.getElementById('makpng').addEventListener('click', () => {
+    document.querySelectorAll('.avatar img').forEach(img => {
+        // Add scatter-bg animation class to animate the background color
+        img.classList.add('scatter-bg');
+
+        // After the background color animation ends, set the background to fully transparent
+        img.addEventListener('animationend', () => {
+            img.style.backgroundColor = 'rgba(255, 255, 255, 0)'; // Ensure the background is fully transparent
+            img.classList.remove('scatter-bg'); // Remove scatter-bg class after animation
+        }, { once: true }); // Ensure the event only triggers once
+    });
+
+    selectedColor = 'rgba(255, 255, 255, 0)'; // Update the selected color state to transparent
+    makPngBtn.style.display = 'none'; // Hide the button after the action
+});
+
+
 
 // Call loadAllAvatars() to initially load all avatars
 loadAllAvatars();
