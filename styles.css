@@ -1,4 +1,4 @@
-/* Updated Global styles */
+/* Global Styles */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -12,59 +12,15 @@ body {
     box-sizing: border-box;
 }
 
-.hello {
-    margin-top: 60px;
-    margin-bottom: 50px;
-}
-
-header h1 {
-    font-family: poppins; /* Replace with your desired font */
-}
-
-h1 {
-    font-family: system-ui; /* Replace with your desired font */
-    font-size: 70px;
-    font-weight: 800;
-    text-align: center;
-}
-
-
-.gradient-text {
-    background: linear-gradient(45deg, #B044FF, #5264FF); /* Example gradient */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
-}
-
-
-
-h6 {
-    font-size: 40px;
-    text-align: center;
-    position: center;
-    font-family: poppins;
-    font-weight: 300;
-
-}
-
-h1, h6 {
-    margin: 1px; /* Remove default margins */
-}
-
-    
+/* Header Styles */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     max-width: 1500px;
-    padding: 40px;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
+    padding: 20px; /* Reduced padding for mobile */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
 .logo img {
@@ -72,11 +28,11 @@ header {
     margin-right: 0px;
 }
 
-.btn-download img {
+.followme img {
     width: 20px;
 }
 
-.btn-download {
+.followme {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -84,7 +40,7 @@ header {
     background-color: #000000;
     color: white;
     text-decoration: none;
-    padding: 12px 18px;
+    padding: 8px 12px; /* Reduced padding for mobile */
     border-radius: 30px;
     border: none;
     font-size: 14px;
@@ -93,10 +49,43 @@ header {
     transition: background-color 0.3s;
 }
 
-.btn-download:hover {
+.followme:hover {
     background-color: #d2d2d2;
 }
 
+/* Hero Section Styles */
+.hello {
+    margin-top: 40px; /* Adjusted for mobile */
+    margin-bottom: 30px; /* Adjusted for mobile */
+}
+
+h1 {
+    font-family: fredoka; /* Replace with your desired font */
+    font-size: 5vw; /* Responsive font size */
+    font-weight: 800;
+    text-align: center;
+}
+
+.gradient-text {
+    background: linear-gradient(45deg, #B044FF, #5264FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+h6 {
+    font-size: 3vw; /* Responsive font size */
+    text-align: center;
+    font-family: fredoka;
+    font-weight: 300;
+}
+
+h1, h6 {
+    margin: 1px; /* Remove default margins */
+}
+
+/* Main Content Styles */
 .main-content {
     text-align: center;
     line-height: 1.2;
@@ -104,60 +93,26 @@ header {
     width: 100%;
 }
 
-.color-circles {
-    display: flex;
-    justify-content: center;
-    gap: 17px;
-    margin-top: 0px;
-}
 
-
-
-.color-picker {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin: 20px 0; /* Adjust margin as needed */
-}
-
-.circle {
-    position: relative;
-    width: 40px;  /* Size of the color circles */
-    height: 40px; /* Size of the color circles */
-    border-radius: 50%; /* Make circles */
-    cursor: pointer;
-}
-
-.circle.selected::after {
-    content: '✔'; /* Unicode for tick */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white; /* Color of the tick */
-    font-size: 20px; /* Size of the tick */
-}
-
-.circle:hover {
-    transform: scale(1.1); /* Scale effect on hover */
-}
-
-/* Gender Toggle */
+/* Gender Toggle Styles */
 .gender-toggle {
     display: inline-flex;
-    gap: 20px;
-    margin: 30px;
+    gap: 14px; /* Reduced gap for smaller screens */
+    margin: 50px; /* Reduced margin for mobile */
     background: #ffffff5d;
-    padding: 10px;
-    border-radius: 30px;
+    font-family: fredoka;
+    padding: 12px;
+    border-radius: 100px;
 }
 
 .gender-toggle button {
-    padding: 10px 30px;
+    padding: 8px 15px; /* Reduced padding for mobile */
     border: none;
+    font-family: fredoka;
+    padding: 14px;
     background: #ffffff00;
     border-radius: 30px;
-    font-size: 16px;
+    font-size: 20px; /* Reduced font size */
     cursor: pointer;
     font-weight: 400;
     transition: all 0.3s ease;
@@ -166,50 +121,53 @@ header {
 .gender-toggle button.active {
     background: linear-gradient(45deg, #B044FF, #5264FF);
     color: white;
+    padding: 18px;
 }
 
 .gender-toggle button:hover {
     background-color: #d5c2f700;
 }
 
-/* Avatar Grid */
+/* Avatar Grid Styles */
 .avatar-grid {
     justify-content: center;
     display: grid;
-    grid-template-columns: repeat(6, 1fr); /* 7 columns */
-    gap: 35px;
-    max-width: 1100px;
-    margin: 50px auto;
-    padding: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Responsive grid */
+    gap: 30px; /* Reduced gap */
+    max-width: 1400px;
+    margin: 0px auto; /* Adjust margin */
+    padding: 10px; /* Adjust padding */
 }
 
 .avatar {
     position: relative;
-    cursor: pointer; /* Change cursor on hover */
+    cursor: pointer;
 }
 
 .avatar img {
-    border-radius: 100px; /* Slightly rounded corners */
-    width: 180px;  /* Increased size */
-    height: 180px; /* Increased size */
+    border-radius: 100px;
+    width: 100%; /* Make image responsive */
+    height: auto; /* Maintain aspect ratio */
     object-fit: cover;
 }
 
 .avatar:hover img {
-    filter: blur(5px); /* Apply blur effect on hover */
-    transform: scale(1.1); /* Slightly scale up the avatar */
+    filter: blur(5px);
+    transform: scale(1.1);
 }
 
 .avatar .btn-download {
-    position: absolute; /* Positioning the button */
+    position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Centering */
-    background: linear-gradient(45deg, #B044FF, #5264FF); /* Background for button */
+    font-family: fredoka;
+    text-decoration: none;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(45deg, #B044FF, #5264FF);
     color: white;
     border: none;
     border-radius: 30px;
-    padding: 10px 20px;
+    padding: 8px 15px; /* Reduced padding for mobile */
     font-weight: normal;
     cursor: pointer;
     display: none; /* Hidden by default */
@@ -220,56 +178,70 @@ header {
     display: block; /* Show button on hover */
 }
 
-
-footer {
-    margin-top: 40px;
-    padding: 20px;
-    text-align: center;
-    color: #666;
-}
-
-
-/* Apply Color Button */
+/* Color Input Styles */
 #hex-color {
-    background-color: #f4f4f4; /* Change this to your desired color */
-    color: rgb(0, 0, 0);
-    border: 1px solid #ccc;
-    border-radius: 50px; /* This defines the radius of the corners */
-    padding: 10px 15px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-#apply-color {
-    background-color: #AD49E1; /* Change this to your desired color */
-    color: white;
-    border: 1px solid #ccc;
-    border-radius: 50px; /* This defines the radius of the corners */
-    padding: 10px 15px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-
-/* Hex Color Input */
-#hexColorInput {
-    width: 100%;
+    width: 90%; /* Input width */
+    height: 30px;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 10px; /* Change this to adjust the roundness of the input corners */
-    margin-bottom: 10px;
+    padding-left: 20px;
+    border: 1px solid #e5e5e5;
+    border-radius: 100px;
+    font-size: 14px; /* Reduced font size */
+    margin-bottom: 12px;
+    outline: none;
+    transition: border-color 0.3s;
 }
 
+#hex-color:focus {
+    border-color: #A45EE5;
+    color: #000000;
+}
 
+/* Apply Button Styles */
+#apply-color {
+    background: linear-gradient(45deg, #B044FF, #5264FF);
+    color: #ffffff;
+    padding: 8px; /* Match padding with the input */
+    width: 60%;
+    height: 45px; /* Set height to match the input */
+    border: none;
+    border-radius: 100px;
+    font-size: 14px; /* Reduced font size */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
+#apply-color:hover {
+    background: #ffffff;
+    color: #A45EE5;
+    border: solid 1px;
+}
 
-
-
-/* Floating Button */
-.randomly-btn {
+/* Floating Button Styles */
+.floating-btn {
     position: fixed;
     animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
     bottom: 150px;
+    left: 90%;
+    background: linear-gradient(45deg, #34cef9, #61ee2a, #d7cb28);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+.randomly-btn {
+    position: fixed;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    bottom: 250px;
     left: 90%;
     background: linear-gradient(45deg, #B044FF, #5264FF);
     color: white;
@@ -277,7 +249,7 @@ footer {
     border-radius: 50%;
     width: 70px;
     height: 70px;
-    font-size: 22px;
+    font-size: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -287,19 +259,18 @@ footer {
 }
 
 
-/* Floating Button */
-.floating-btn {
+.makepng {
     position: fixed;
     animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
     bottom: 50px;
     left: 90%;
-    background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
+    background: linear-gradient(45deg, #ff4444, #ff8652);
     color: white;
     border: none;
     border-radius: 50%;
     width: 70px;
     height: 70px;
-    font-size: 22px;
+    font-size: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -308,152 +279,141 @@ footer {
     transition: background-color 0.3s;
 }
 
+.randomly-btn:hover {
+    background: #ffffff;
+    color: #B044FF;
+}
 .floating-btn:hover {
     background: #ffffff;
-    color:  #B044FF;
+    color: #B044FF;
+}
+.makepng:hover {
+    background: #ffffff;
+    color: #B044FF;
 }
 
-
-/* Modal Styles */
-.modal {
-    display: none; /* Hidden by default */
+/* Modal Overlay */
+#color-picker-modal {
+    display: none; /* Hide by default */
     position: fixed;
-    z-index: 100; /* Higher z-index to appear above other elements */
-    left: 0;
     top: 0;
-    width: 100%; /* Full width to cover the viewport */
-    height: 100%; /* Full height to cover the viewport */
-    overflow: auto; /* Allow scrolling if necessary */
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-    padding: 0;
-    transition: opacity 0.3s ease; /* Smooth fade-in/out */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 1000; /* Make sure it's on top */
 }
 
 /* Modal Content */
 .modal-content {
-    background-color: #ffffff; /* White background */
-    margin: 20px auto; /* Center with a margin */
-    padding: 30px; /* Padding around the content */
-    border-radius: 30px; /* Rounded corners */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
-    width: 300px; /* Fixed width */
-    max-width: 60%; /* Responsive max width */
-    height: 300px; /* Fixed height to maintain shape */
-    display: flex; /* Use flexbox for centering */
-    flex-direction: column; /* Vertical layout */
-    align-items: center; /* Center items horizontally */
-    justify-content: center; /* Center items vertically */
-    position: absolute; /* Absolute positioning for centering */
-    top: 50%; /* Position from the top */
-    left: 50%; /* Position from the left */
-    transform: translate(-50%, -50%); /* Translate back by half of width and height */
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    background-color: white; /* Background of the modal */
+    padding: 25px;
+    border-radius: 25px;
+    position: absolute; /* Position relative to the overlay */
+    top: 50%; /* Move down from the top */
+    left: 50%; /* Move in from the left */
+    transform: translate(-50%, -50%); /* Centering transformation */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional shadow */
 }
-
-
 
 h5 {
+    font-size: 1.3vw; /* Responsive font size */
+    text-align: center;
     font-family: poppins;
-    font-size: 25px;
-    }
-    
-
-/* Color Input */
-#hex-color {
-    width: 90%; /* Input width */
-    height: 30px;
-    padding: 10px;
-    padding-left: 20px;
-    border: 1px solid #e5e5e5;
-    border-radius: 100px; /* Rounded input */
-    font-size: 16px;
-    margin-bottom: 12px; /* Space below input for the button */
-    outline: none;
-    transition: border-color 0.3s; /* Smooth transition */
+    font-weight: 600;
 }
 
-#hex-color:focus {
-    border-color: #A45EE5; /* Change border color on focus */
-    color: #000000;
-}
-
-/* Apply Button */
-#apply-color {
-    background: linear-gradient(45deg, #B044FF, #5264FF); /* Button color */
-    color: #ffffff; /* Text color */
-    padding: 10px; /* Match padding with the input */
-    width: 60%; /* Same width as input */
-    height: 50px; /* Set height to match the input */
-    border: none;
-    border-radius: 100px; /* Rounded button */
-    font-size: 16px;
+/* Close Button in Modal */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s; /* Smooth transition */
 }
 
-#apply-color:hover {
-    background: #ffffff; /* Darker color on hover */
-    color: #A45EE5;
-    border: solid 1px;
+.close:hover,
+.close:focus {
+    color: black;
 }
 
-
-/* Modern hover effect */
-.close-btn:hover {
-    color: #0056b3; /* Darker color on hover */
-    transform: scale(1.1); /* Slightly enlarge on hover */
+/* Footer Styles */
+footer {
+    margin-top: auto;
+    padding: 20px 0;
+    text-align: center;
 }
 
-/* Close button focus effect */
-.close-btn:focus {
-    outline: none; /* Remove default outline */
+footer a {
+    color: #B044FF;
+    text-decoration: none;
 }
 
-
-.close-btn:hover,
-.close-btn:focus {
-    color: #333; /* Darker color on hover */
+footer a:hover {
+    text-decoration: underline;
 }
 
-/* Responsive Design */
-@media (max-width: 480px) {
-    .modal-content {
-        width: 90%; /* Full width on smaller screens */
-        height: auto; /* Auto height for smaller screens */
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 8vw; /* Adjust for tablets and smaller devices */
     }
-    
-    h5 {
-        font-size: 20px; /* Smaller title on mobile */
+
+    h6 {
+        font-size: 5vw; /* Adjust for tablets and smaller devices */
+    }
+
+    .hello {
+        margin-top: 20px; /* Adjust for mobile */
+        margin-bottom: 20px; /* Adjust for mobile */
+    }
+
+    .color-circles,
+    .gender-toggle {
+        flex-direction: column; /* Stack items on smaller screens */
+        gap: 10px; /* Reduced gap for smaller screens */
+    }
+
+    .gender-toggle button {
+        font-size: 12px; /* Smaller button text */
     }
 
     #hex-color {
-        font-size: 14px; /* Smaller input text */
-    }
-
-    #apply-color {
-        font-size: 14px; /* Smaller button text */
+        width: 100%; /* Full width on smaller screens */
     }
 }
 
-
-
-
-
-
-
-
-/* Add this CSS to your stylesheet */
-@keyframes popper {
-    0% {
-        transform: scale(1);
+@media (max-width: 480px) {
+    header {
+        padding: 10px; /* Further reduce padding for mobile */
     }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
 
-.popper-animation {
-    animation: popper 0.3s ease-in-out;
+    .logo img {
+        width: 50px; /* Smaller logo */
+    }
+
+    .followme img {
+        width: 18px; /* Smaller icons */
+    }
+
+    h1 {
+        font-size: 10vw; /* Further adjust font size for mobile */
+    }
+
+    h6 {
+        font-size: 6vw; /* Further adjust font size for mobile */
+    }
+
+    .avatar-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Adjust grid for mobile */
+    }
+
+    .circle {
+        width: 30px; /* Smaller color circles */
+        height: 30px; /* Smaller color circles */
+    }
 }
