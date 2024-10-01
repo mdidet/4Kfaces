@@ -2,7 +2,7 @@
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    background: linear-gradient(95deg, #edd2ff, #cbd0ff, #d3fff0);
+    background: linear-gradient(to bottom, #f8f0ff, #6c25f900);
     color: #333;
     display: flex;
     flex-direction: column;
@@ -20,7 +20,6 @@ header {
     margin-top: 30px;
     width: 100%;
     max-width: 1500px;
-    padding: 20px; /* Reduced padding for mobile */
     flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
@@ -107,7 +106,7 @@ h6 {
     display: inline-flex;
     gap: 14px; /* Reduced gap for smaller screens */
     margin: 50px; /* Reduced margin for mobile */
-    background: #ffffff5d;
+    background: #ffffffd4;
     font-family: fredoka;
     padding: 10px;
     border-radius: 100px;
@@ -339,6 +338,61 @@ h6 {
     color: #B044FF;
     cursor: pointer;
 }
+
+
+
+#story-section {
+    background-color: rgba(237, 230, 255, 0.279); /* Slightly transparent background */
+    max-width: 800px;
+    font-family: fredoka;
+    padding: 25px 50px; /* Add some padding */
+    border-radius: 20px; /* Rounded corners */
+    margin-top: 100px;
+    margin-bottom: 0px; /* Space between the story and other content */
+}
+
+
+h2 {
+    font-size: 30px;
+}
+
+
+#story-section p {
+    font-size: 20px;
+    line-height: 30px;
+}
+
+
+
+footer {
+    background-color: #ffffff00; /* Dark background */
+    color: rgb(0, 0, 0); /* White text */
+    text-align: center; /* Center text */
+    padding-top: 100px;
+    padding-bottom: 20px;
+    position: relative; /* Positioning */
+    bottom: 0; /* Stick to bottom */
+    width: 100%; /* Full width */
+}
+
+footer a {
+    color: #6c25f9; /* Bright accent color for links */
+    text-decoration: underline; /* Remove underline */
+    margin: 0 5px; /* Spacing between links */
+    transition: color 0.5s; /* Smooth color transition */
+}
+
+footer a:hover {
+    color: #080808; /* Lighter color on hover */
+}
+
+footer p {
+    margin: 10px 0 0; /* Spacing above paragraph */
+    font-size: 14px; /* Smaller font for additional text */
+}
+
+
+
 
 /* Responsive Media Queries */
 @media (max-width: 768px) {
