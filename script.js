@@ -13,6 +13,43 @@ document.addEventListener('DOMContentLoaded', function () {
     let femaleCount = 0; // Count of female avatars
     const totalAvatars = 100; // Change this to the total number of avatars available
 
+
+   // Lazy loading observer for images
+ const lazyLoadObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src; // Load image only when in view
+            img.classList.add('visible');
+            observer.unobserve(img); // Stop observing after loading
+        }
+    });
+}, { rootMargin: '0px 0px 100px 0px', threshold: 0.1 });
+
+// Function to load avatar images lazily
+function createAvatarElement(imgSrc) {
+    const avatarElement = document.createElement('div');
+    avatarElement.classList.add('avatar');
+    avatarElement.innerHTML = `
+        <div class="avatar-container">
+            <img data-src="${imgSrc}" alt="Avatar" class="lazy-avatar" style="background-color: ${selectedColor};">
+            <a href="#" class="btn-download">Download</a>
+        </div>
+    `;
+    avatarGrid.appendChild(avatarElement);
+
+    // Lazy load the image
+    const avatarImage = avatarElement.querySelector('img');
+    lazyLoadObserver.observe(avatarImage); // Observe for lazy loading
+}
+
+
+
+
+
+
+
+    
     // Function to load all avatars
     function loadAllAvatars() {
         for (let i = 1; i <= totalAvatars; i++) {
@@ -278,3 +315,4 @@ document.getElementById('makpng').addEventListener('click', () => {
 
 // Call loadAllAvatars() to initially load all avatars
 loadAllAvatars();
+
