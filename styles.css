@@ -68,6 +68,8 @@ h1 {
 
 h5 {
     font-family: fredoka; /* Replace with your desired font */
+    margin-top: 10px;
+    margin-bottom:30px;
     font-size: 1.3vw; /* Responsive font size */
     font-weight: 600;
     text-align: center;
@@ -195,13 +197,13 @@ h6 {
     border: 1px solid #e5e5e5;
     border-radius: 100px;
     font-size: 14px; /* Reduced font size */
-    margin-bottom: 12px;
+    margin-bottom: 25px;
     outline: none;
     transition: border-color 0.3s;
 }
 
 #hex-color:focus {
-    border-color: #A45EE5;
+    border-color: #a0a0a0;
     color: #000000;
 }
 
@@ -211,7 +213,7 @@ h6 {
     color: #ffffff;
     padding: 8px; /* Match padding with the input */
     width: 60%;
-    height: 45px; /* Set height to match the input */
+    height: 50px; /* Set height to match the input */
     border: none;
     border-radius: 100px;
     font-size: 14px; /* Reduced font size */
@@ -324,7 +326,7 @@ h6 {
     left: 50%;
     transform: translate(-50%, -50%);
     background: white;
-    padding: 20px;
+    padding: 30px;
     border-radius: 40px;
     width: 80%; /* Adjust width */
     max-width: 300px; /* Set max width */
