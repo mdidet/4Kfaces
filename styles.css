@@ -28,8 +28,17 @@ header {
     margin-right: 0px;
 }
 
-.followme {
+header {
     display: flex;
+    justify-content: space-between; /* Ensures logo and buttons are spaced evenly */
+    align-items: center; /* Centers items vertically */
+    padding: 10px 20px; /* Adjust padding as needed */
+}
+
+.followme,
+.figma {
+    display: flex;
+    font-family: fredoka;
     align-items: center;
     justify-content: center;
     gap: 8px;
@@ -39,19 +48,28 @@ header {
     padding: 15px 20px; /* Reduced padding for mobile */
     border-radius: 30px;
     border: none;
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 400;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
-.followme img {
-    width: 20px;
+.followme img,
+.figma img {
+    width: 25px; /* Adjust icon size as needed */
 }
 
-.followme:hover {
+.followme:hover,
+.figma:hover {
     transform: scale(1.1);
 }
+
+.button-container {
+    display: flex; /* Use flex to place buttons in a row */
+    gap: 20px; /* Space between buttons */
+    margin-left: auto; /* Push the buttons to the right */
+}
+
 
 /* Hero Section Styles */
 .hello {
