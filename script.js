@@ -44,12 +44,7 @@ function createAvatarElement(imgSrc) {
 }
 
 
-
-
-
-
-
-    
+  
     // Function to load all avatars
     function loadAllAvatars() {
         for (let i = 1; i <= totalAvatars; i++) {
@@ -290,8 +285,6 @@ makPngBtn.addEventListener('click', () => {
     // Hide the button again after resetting the backgrounds
     makPngBtn.style.display = 'none';
 });
-
-
 
 
 // Event listener for making PNG with scatter background animation
