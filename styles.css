@@ -2,7 +2,7 @@
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    background: linear-gradient(to bottom, #f8f0ff, #6c25f900);
+    background-color: #f2f8f5;
     color: #333;
     display: flex;
     flex-direction: column;
@@ -42,7 +42,7 @@ header {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    background-color: #000000;
+    background-color: #232323;
     color: white;
     text-decoration: none;
     padding: 15px 20px; /* Reduced padding for mobile */
@@ -81,6 +81,7 @@ h1 {
     font-family: fredoka; /* Replace with your desired font */
     font-size: 5vw; /* Responsive font size */
     font-weight: 800;
+    color: #232323;
     text-align: center;
 }
 
@@ -94,7 +95,7 @@ h5 {
 }
 
 .gradient-text {
-    background: linear-gradient(45deg, #B044FF, #5264FF);
+    background-color: #f45d48;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -145,13 +146,9 @@ h6 {
 }
 
 .gender-toggle button.active {
-    background: linear-gradient(45deg, #B044FF, #5264FF);
+    background-color: #078080;
     color: white;
     padding: 15px 20px;
-}
-
-.gender-toggle button:hover {
-    background-color: #d5c2f700;
 }
 
 /* Avatar Grid Styles */
@@ -191,7 +188,7 @@ h6 {
     font-family: fredoka;
     text-decoration: none;
     transform: translate(-50%, -50%);
-    background: linear-gradient(45deg, #B044FF, #5264FF);
+    background-color: #078080;
     color: white;
     border: none;
     border-radius: 30px;
@@ -227,7 +224,7 @@ h6 {
 
 /* Apply Button Styles */
 #apply-color {
-    background: linear-gradient(45deg, #B044FF, #5264FF);
+    background-color: #078080;
     color: #ffffff;
     padding: 8px; /* Match padding with the input */
     width: 60%;
@@ -241,7 +238,7 @@ h6 {
 
 #apply-color:hover {
     background: #ffffff;
-    color: #A45EE5;
+    color: #078080;
     border: solid 1px;
 }
 
@@ -251,7 +248,7 @@ h6 {
     animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
     bottom: 50px;
     left: 90%;
-    background: linear-gradient(45deg, #34cef9, #61ee2a, #d7cb28);
+    background-color: #078080;
     color: white;
     border: none;
     border-radius: 50%;
@@ -271,7 +268,7 @@ h6 {
     animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
     bottom: 150px;
     left: 90%;
-    background: linear-gradient(45deg, #B044FF, #5264FF);
+    background-color: #f45d48;
     color: white;
     border: none;
     border-radius: 50%;
@@ -291,7 +288,7 @@ h6 {
     animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
     bottom: 250px;
     left: 90%;
-    background: linear-gradient(45deg, #ff4444, #ff8652);
+    background-color: #232323;
     color: white;
     border: none;
     border-radius: 50%;
@@ -308,17 +305,17 @@ h6 {
 
 .randomly-btn:hover {
     background: #ffffff;
-    color: #5264FF;
+    color: #f45d48;
 }
 
 .floating-btn:hover {
     background: #ffffff;
-    color: #61ee2a;
+    color: #078080;
 }
 
 .makepng:hover {
     background: #ffffff;
-    color: #ff4444;
+    color: #232323;
 }
 
 /* Modal Overlay */
@@ -362,7 +359,7 @@ h6 {
 
 
 #story-section {
-    background-color: rgba(237, 230, 255, 0.279); /* Slightly transparent background */
+    background-color: rgb(255, 255, 255); /* Slightly transparent background */
     max-width: 800px;
     font-family: fredoka;
     padding: 25px 50px; /* Add some padding */
@@ -383,7 +380,6 @@ h2 {
 }
 
 
-
 footer {
     background-color: #ffffff00; /* Dark background */
     color: rgb(0, 0, 0); /* White text */
@@ -396,7 +392,7 @@ footer {
 }
 
 footer a {
-    color: #6c25f9; /* Bright accent color for links */
+    color: #078080; /* Bright accent color for links */
     text-decoration: underline; /* Remove underline */
     margin: 0 5px; /* Spacing between links */
     transition: color 0.5s; /* Smooth color transition */
